@@ -20,7 +20,7 @@ Website and API for interactive rooftops analysis with artificial neural network
 
     `export FLASK_ENV=development`
 
-    `export FLASK_APP=topics_predictions`
+    `export FLASK_APP=rooftop_predictions`
 4. Run 
 
     `flask run`
