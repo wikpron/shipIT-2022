@@ -8,7 +8,7 @@ Website and API for interactive rooftops analysis with artificial neural network
 
 `python3 -m venv .venv`
 
-2. Install the provided requirements.txt into a virtual environment 
+2. Install the provided requirements.txt into the virtual environment 
 
 `pip3 install -r requirements.txt`
 
