@@ -1,6 +1,6 @@
 # Rooftops machine learning
 
-Website (front-end) and API for interactive rooftops analysis with artificial neural networks.
+Website and API for interactive rooftops analysis with artificial neural networks.
 
 ## Run from terminal
 
@@ -8,6 +8,8 @@ Website (front-end) and API for interactive rooftops analysis with artificial ne
 `python3 -m venv .venv`
 
 2. Install the provided requirements.txt into a virtual environment 
+`pip3 install -r requirements.txt`
+
 3. Activate the virtual environment
 4. Define the environment variables
 
