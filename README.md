@@ -11,6 +11,8 @@ Website and API for interactive rooftops analysis with artificial neural network
 `pip3 install -r requirements.txt`
 
 3. Activate the virtual environment
+`source .venv/bin/activate`
+
 4. Define the environment variables
 
     `export FLASK_ENV=development`
