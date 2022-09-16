@@ -18,4 +18,4 @@ Website and API for interactive rooftops analysis with artificial neural network
 
 4. Run 
 
-    `python3 rooftop_predictions/test.py`
+`python3 rooftop_predictions/test.py`
