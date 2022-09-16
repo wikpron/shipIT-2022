@@ -16,11 +16,6 @@ Website and API for interactive rooftops analysis with artificial neural network
 
 `source .venv/bin/activate`
 
-4. Define the environment variables
-
-    `export FLASK_ENV=development`
-
-    `export FLASK_APP=rooftop_predictions`
 4. Run 
 
-    `flask run`
+    `python3 rooftop_predictions/test.py`
