@@ -3,4 +3,17 @@
 <link rel="stylesheet" type="text/css" href="/static/base.css">
 <section class="content">
     <div>Rooftop Machine Learning</div>
+    <div>{{image_data}}</div>
 </section>
+
+<form action="" method=post enctype=multipart/form-data>
+<input type="file" id="image-input" name="upload_image" accept="image/jpeg, image/png, image/jpg">
+<input type=submit value=Upload>
+</form>
+<script>
+    var img = new Image();
+    var b64_str = {{image_data}};
+    var img_data = JSON.parse(JSON.stringify(b64_str));
+    console.log(img_data);
+    img.src = 'data:image/png;base64,'+img_data; 
+</script>
