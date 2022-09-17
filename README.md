@@ -1,6 +1,6 @@
 # Rooftops Machine Learning
 
-WWebsite and API for interactive rooftops analysis with artificial neural networks.
+WWWebsite and API for interactive rooftops analysis with artificial neural networks.
 
 ## Run from terminal
 
