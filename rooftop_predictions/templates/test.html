@@ -3,17 +3,39 @@
 <link rel="stylesheet" type="text/css" href="/static/base.css">
 <section class="content">
     <div>Rooftop Machine Learning</div>
-    <div>{{image_data}}</div>
 </section>
 
 <form action="" method=post enctype=multipart/form-data>
 <input type="file" id="image-input" name="upload_image" accept="image/jpeg, image/png, image/jpg">
 <input type=submit value=Upload>
 </form>
+<canvas id="orig_img" width="256px" height="256px">
+</canvas>
+<canvas id="heatmap" width="256px" height="256px">
+</canvas>
 <script>
+    var cnv = document.getElementById("orig_img");
+    var ctx = cnv.getContext("2d");
     var img = new Image();
-    var b64_str = {{image_data}};
-    var img_data = JSON.parse(JSON.stringify(b64_str));
-    console.log(img_data);
-    img.src = 'data:image/png;base64,'+img_data; 
+    // img.onload = function() {
+    //     console.log("HIHI")
+    //     // ctx.drawImage(img, 0, 0);
+    // }
+    function get_predictions() {
+        fetch("/get_predictions")
+        .then(res => res.json())
+        .then(res => {
+            console.log("SUCCESS") 
+            var img = new Image();
+            img.src = 'data:image/jpeg;base64,'+res.orig_img; 
+            // console.log(img.src);
+            img.onload = function() {
+                console.log("HIHI")
+                ctx.drawImage(img, 0, 0);
+            }
+        })
+        .catch(err => {
+            console.log("ERROR") 
+        })
+    }
 </script>
