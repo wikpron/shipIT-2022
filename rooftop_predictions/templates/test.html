@@ -16,6 +16,8 @@
 <script>
     var cnv = document.getElementById("orig_img");
     var ctx = cnv.getContext("2d");
+    var cnv_heatmap = document.getElementById("heatmap");
+    var ctx_heatmap = cnv_heatmap.getContext("2d");
     var img = new Image();
     // img.onload = function() {
     //     console.log("HIHI")
@@ -28,10 +30,13 @@
             console.log("SUCCESS") 
             var img = new Image();
             img.src = 'data:image/jpeg;base64,'+res.orig_img; 
-            // console.log(img.src);
             img.onload = function() {
-                console.log("HIHI")
                 ctx.drawImage(img, 0, 0);
+            }
+            var img_heatmap = new Image();
+            img_heatmap.src = 'data:image/jpeg;base64,'+res.heatmap; 
+            img_heatmap.onload = function() {
+                ctx_heatmap.drawImage(img_heatmap, 0, 0);
             }
         })
         .catch(err => {
