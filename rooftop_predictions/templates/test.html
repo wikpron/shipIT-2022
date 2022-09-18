@@ -14,15 +14,12 @@
 <canvas id="heatmap" width="256px" height="256px">
 </canvas>
 <script>
+    var uploaded_img = {{uploaded_img}};
     var cnv = document.getElementById("orig_img");
     var ctx = cnv.getContext("2d");
     var cnv_heatmap = document.getElementById("heatmap");
     var ctx_heatmap = cnv_heatmap.getContext("2d");
     var img = new Image();
-    // img.onload = function() {
-    //     console.log("HIHI")
-    //     // ctx.drawImage(img, 0, 0);
-    // }
     function get_predictions() {
         fetch("/get_predictions")
         .then(res => res.json())
@@ -44,6 +41,8 @@
         })
     }
     window.onload = function() {
-        console.log("loaded") 
+        if (uploaded_img == 1) {
+            get_predictions();
+        }
     }
 </script>
