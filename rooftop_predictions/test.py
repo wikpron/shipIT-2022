@@ -59,7 +59,7 @@ def get_predictions():
 def index():
     global orig_img
     if request.method == "POST":
-        img = Image.open(request.files["upload_image"].stream).convert("RGB")
+        img = Image.open(request.files["upload_image"].stream).resize((IMG_SIZE, IMG_SIZE)).convert("RGB")
         orig_img = img
         return render_template("test.html", uploaded_img=1)
     return render_template("test.html", uploaded_img=0)
